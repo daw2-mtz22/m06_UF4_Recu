@@ -7,7 +7,7 @@ export default function TablaResueltos({ticketsResueltos}){
 
 
     const controladorBorrarTicket  = async (ticketId)=>{
-        await fetch(`https://json-server-examen-final.vercel.app/ticketsResueltos/${ticketId}`, {
+        await fetch(`https://m06-uf-4-recu-json-server.vercel.app/ticketsResueltos/${ticketId}`, {
             method: 'DELETE'
         });
 

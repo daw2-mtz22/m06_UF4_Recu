@@ -20,8 +20,8 @@ export default function Panel() {
     }
   useEffect(() => {
       const cargarDatos = async () => {
-          const responseTicketsPendientes = await fetch('https://json-server-examen-final.vercel.app/ticketsPendientes');
-          const responseTicketsResueltos = await fetch('https://json-server-examen-final.vercel.app/ticketsResueltos');
+          const responseTicketsPendientes = await fetch('https://m06-uf-4-recu-json-server.vercel.app/ticketsPendientes');
+          const responseTicketsResueltos = await fetch('https://m06-uf-4-recu-json-server.vercel.app/ticketsResueltos');
           const ticketsPendientes = await responseTicketsPendientes.json();
           //Como ya estaba el JSON ordenado he usado la funcion de añadir ticket para generar uno anterior a todos
           //split para separar los elementros de la fecha teniendo en cuanta la "/"

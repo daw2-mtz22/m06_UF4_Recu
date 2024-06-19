@@ -14,19 +14,19 @@ export default function TablaPendientes({ticketsPendientes}){
     }
 
     const controladorBorrarTicket  = async (ticketId)=>{
-        await fetch(`https://json-server-examen-final.vercel.app/ticketsPendientes/${ticketId}`, {
+        await fetch(`https://m06-uf-4-recu-json-server.vercel.app/ticketsPendientes/${ticketId}`, {
             method: 'DELETE'
         });
 
         setDades({...dades, ticketsPendientes:dades.ticketsPendientes.filter(ticket => ticket.id !== ticketId)});
     }
     const controladorResolveTicket = async (ticketPendiente)=>{
-        const reponseDelete =         await fetch(`https://json-server-examen-final.vercel.app/ticketsPendientes/${ticketPendiente.id}`, {
+        const reponseDelete =         await fetch(`https://m06-uf-4-recu-json-server.vercel.app/ticketsPendientes/${ticketPendiente.id}`, {
             method: 'DELETE'
         });
         delete ticketPendiente.id
         if(reponseDelete.status === 200){
-            const response = await fetch(`https://json-server-examen-final.vercel.app/ticketsResueltos`, {
+            const response = await fetch(`https://m06-uf-4-recu-json-server.vercel.app/ticketsResueltos`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

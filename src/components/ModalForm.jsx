@@ -22,7 +22,7 @@ export default function ModalForm ({isVisible, setIsVisible, dataForm=null, tick
             {...dataTicket, [field]:value})
     }
     const controladorNuevoTicket = async (newTicket, ticketType)=>{
-        const response = await fetch(`https://json-server-examen-final.vercel.app/${ticketType}`, {
+        const response = await fetch(`https://m06-uf-4-recu-json-server.vercel.app/${ticketType}`, {
             method: 'POST',
             //Sin este header no funciona, no sé envía como JSON
             headers: {
@@ -38,7 +38,7 @@ export default function ModalForm ({isVisible, setIsVisible, dataForm=null, tick
     }
 
     const controladorActualizaTicket = async (formTicket)=>{
-        const response = await fetch(`https://json-server-examen-final.vercel.app/ticketsPendientes/${formTicket.id}`, {
+        const response = await fetch(`https://m06-uf-4-recu-json-server.vercel.app/${formTicket.id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
